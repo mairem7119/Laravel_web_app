@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Users;
+use App\Models\User;
 
 class AuthenticationController extends Controller
 {
@@ -13,16 +14,22 @@ class AuthenticationController extends Controller
     {
         return view('login');
     }
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
         $userInput = $request->only('email', 'password');
-        $user = Users::where('email', $userInput['email'])->first();
-        if (!$user) {
-            //|| !Hash::check($userInput['password'], $user->password
+        $user = User::where('email', $userInput['email'])->first();
+
+        if (!$user || !Hash::check($userInput['password'], $user->password)) {
+            // Nếu không tìm thấy người dùng hoặc mật khẩu không khớp
             return redirect()->route('login')->with('error', 'Invalid email or password');
         }
         Auth::login($user);
-        return view('user');
+        // Điều hướng người dùng dựa trên vai trò của họ
+        if ($user->isAdmin()) {
+            return redirect('/admin'); // Điều hướng người dùng admin
+        } else {
+            return redirect('/user'); // Điều hướng người dùng thông thường
+        }
     }
     public function showRegisterForm()
     {
@@ -31,11 +38,11 @@ class AuthenticationController extends Controller
     public function register(Request $request)
     {
         $userInput = $request->only('name', 'email', 'password');
-        $user = Users::where('email', $userInput['email'])->first();
+        $user = User::where('email', $userInput['email'])->first();
         if ($user) {
             return redirect()->route('register')->with('error', 'Email already exists');
         }
-        $user = new Users();
+        $user = new User();
         $user->name = $userInput['name'];
         $user->email = $userInput['email'];
         $user->password = Hash::make($userInput['password']);

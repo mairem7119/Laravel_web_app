@@ -18,7 +18,10 @@ body {
     min-height: 300vh;
     position: relative;
 }
-
+header{
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 .responsive-wrapper {
     width: 90%;
     max-width: 1280px;

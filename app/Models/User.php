@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Users extends Authenticatable
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -21,6 +21,7 @@ class Users extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -32,7 +33,10 @@ class Users extends Authenticatable
         'password',
         'remember_token',
     ];
-
+    public function isAdmin()
+    {
+        return $this->role === 'admin'; // Giả sử role của admin được lưu trong trường 'role'
+    }
     /**
      * The attributes that should be cast.
      *

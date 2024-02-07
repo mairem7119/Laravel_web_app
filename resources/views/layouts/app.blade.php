@@ -20,7 +20,7 @@
                 <img src="https://rikkeisoft.com/wp-content/themes/main/assets/images/home/logo.svg" />
             </div>
             <nav class="header-navigation">
-                <a href="#">Home</a>
+                <a href="/">Home</a>
                 <a href="#">About</a>
                 <a href="#">Blog</a>
                 <a href="#">Contact Us</a>

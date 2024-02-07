@@ -18,11 +18,18 @@
                     @csrf
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" name="email" class="login__input" placeholder="User name / Email">
+                        <input type="text" name="email" class="login__input" placeholder="User name / Email" value="{{ old('email') }}">
+                        @if ($errors->has('email'))
+                            <span class="error"
+                                style="color: red; display: block;">{{ $errors->first('email') }}</span>
+                        @endif
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-lock"></i>
                         <input type="password" name="password" class="login__input" placeholder="Password">
+                        @if ($errors->has('password'))
+                            <span class="error" style="color: red;">{{ $errors->first('password') }}</span>
+                        @endif
                     </div>
                     <button class="button login__submit" type="submit">
                         <span class="button__text">Log In Now</span>

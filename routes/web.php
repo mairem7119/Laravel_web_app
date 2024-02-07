@@ -26,7 +26,8 @@ Route::post('/register', [AuthenticationController::class, 'register']);
 
 Route::get('/user', function () {
     return view('user');
-});
+})->name('user')->middleware('checkUserRole');
+
 Route::get('/admin', function () {
     return view('admin');
-});
+})->name('admin')->middleware('checkUserRole');
