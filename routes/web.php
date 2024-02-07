@@ -20,6 +20,10 @@ Route::get('/', function () {
 Route::get('/login', [AuthenticationController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthenticationController::class, 'login']);
 
+
+Route::get('/register', [AuthenticationController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [AuthenticationController::class, 'register']);
+
 Route::get('/user', function () {
     return view('user');
 });

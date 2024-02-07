@@ -24,4 +24,22 @@ class AuthenticationController extends Controller
         Auth::login($user);
         return view('user');
     }
+    public function showRegisterForm()
+    {
+        return view('register');
+    }
+    public function register(Request $request)
+    {
+        $userInput = $request->only('name', 'email', 'password');
+        $user = Users::where('email', $userInput['email'])->first();
+        if ($user) {
+            return redirect()->route('register')->with('error', 'Email already exists');
+        }
+        $user = new Users();
+        $user->name = $userInput['name'];
+        $user->email = $userInput['email'];
+        $user->password = Hash::make($userInput['password']);
+        $user->save();
+        return view('user');
+    }
 }
