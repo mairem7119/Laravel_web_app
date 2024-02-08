@@ -1,7 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-}
+
 :root {
     --header-outer-height: 110px;
     --header-inner-height: 70px;
@@ -12,13 +9,19 @@ body {
 }
 
 body {
-    font-family: "DM Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f2f5f7;
     line-height: 1.5;
     min-height: 300vh;
     position: relative;
 }
-header{
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", sans-serif; /* Thiết lập font chữ cho tiêu đề */
+    /* Các thiết lập khác cho tiêu đề */
+}
+header {
     border-bottom: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -72,7 +75,7 @@ header{
 .header-navigation button {
     font-size: 1.125rem;
     color: inherit;
-    margin-left: 1.75rem;
+    margin-left: 2.75rem;
     position: relative;
     font-weight: 500;
 }
@@ -154,4 +157,17 @@ header{
     .header-navigation button {
         display: none;
     }
+}
+.user-information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.log-icon {
+    margin-left: 1.75rem;
+}
+.user-name {
+    text-align: center;
+    padding-bottom: 5px;
+    text-transform: capitalize;
 }

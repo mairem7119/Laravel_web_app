@@ -9,6 +9,8 @@
     <title>@yield('title')</title>
     <!-- Bất kỳ CSS hoặc script nào khác bạn muốn bao gồm -->
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 
 <body>
@@ -23,10 +25,32 @@
                 <a href="/">Home</a>
                 <a href="#">About</a>
                 <a href="#">Blog</a>
-                <a href="#">Contact Us</a>
-                <a href="/login">Login</a>
-                <button>Menu</button>
+                <a href="/contact">Contact Us</a>
             </nav>
+            <div class="user-information">
+                <div class="user-name">
+                    @if (Auth::check())
+                        <a>{{ Auth::user()->name }}</a>
+                    @endif
+                </div>
+                <div class="log-icon">
+                    <div id="loginButton">
+                        @if (Auth::check())
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt" style="font-size: 25px;color: #34a6ea;"></i>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @else
+                            <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"
+                                    style="font-size: 25px;color: #34a6ea;"></i></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 

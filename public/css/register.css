@@ -11,6 +11,7 @@ body {
     line-height: 1.5;
     background-color: #f1f3fb;
     padding: 0 2rem;
+    overflow: hidden;
 }
 
 img {
@@ -105,13 +106,16 @@ input {
 
 .action {
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .action-button {
     font: inherit;
     font-size: 1.25rem;
-    padding: 1em;
-    width: 100%;
+    padding: 0.5rem;
+    width: 70%;
     font-weight: 500;
     background-color: #6658d3;
     border-radius: 6px;
@@ -120,6 +124,14 @@ input {
     cursor: pointer;
     &:focus {
         outline: 0;
+    }
+}
+.back-to-login {
+    margin-top: 0.5rem;
+    text-align: center;
+    a {
+        color: #8597a3;
+        text-decoration: none;
     }
 }
 

@@ -24,22 +24,33 @@
                 <div class="input">
                     <input type="text" class="input-field" name="name" value="Harry Potter" required />
                     <label class="input-label">Full name</label>
+                    @if ($errors->has('name'))
+                        <span class="error" style="color: red;">{{ $errors->first('name') }}</span>
+                    @endif
                 </div>
                 <div class="input">
                     <input type="text" class="input-field" name="email" value="harry@rikkeisoft.com" required />
                     <label class="input-label">Email</label>
+                    @if ($errors->has('email'))
+                        <span class="error" style="color: red; display: block;">{{ $errors->first('email') }}</span>
+                    @endif
                 </div>
                 <div class="input">
                     <input type="password" class="input-field" name="password" required />
                     <label class="input-label">Password</label>
+                    @if ($errors->has('password'))
+                        <span class="error" style="color: red;">{{ $errors->first('password') }}</span>
+                    @endif
                 </div>
                 <div class="action">
                     <button class="action-button" type="submit">Get started</button>
                 </div>
+                <div class="back-to-login">
+                    <a href="{{ route('login') }}" class="back__login__a">
+                        Already have an account
+                    </a>
+                </div>
             </form>
-            <div class="card-info">
-                <p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
-            </div>
         </div>
     </div>
 

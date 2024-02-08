@@ -18,7 +18,8 @@
                     @csrf
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" name="email" class="login__input" placeholder="User name / Email" value="{{ old('email') }}">
+                        <input type="text" name="email" class="login__input" placeholder="User name / Email"
+                            value="{{ old('email') }}">
                         @if ($errors->has('email'))
                             <span class="error"
                                 style="color: red; display: block;">{{ $errors->first('email') }}</span>
@@ -37,7 +38,9 @@
                     </button>
                 </form>
                 <div class="social-login">
-                    <h3>Rikkeisoft japan</h3>
+                    <a href="{{ route('register') }}" class="create__account__a">
+                        <h3>Create new account</h3>
+                    </a>
                     <div class="social-icons">
                         <a href="#" class="social-login__icon fab fa-instagram"></a>
                         <a href="#" class="social-login__icon fab fa-facebook"></a>

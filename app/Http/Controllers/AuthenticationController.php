@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -35,7 +36,7 @@ class AuthenticationController extends Controller
     {
         return view('register');
     }
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
         $userInput = $request->only('name', 'email', 'password');
         $user = User::where('email', $userInput['email'])->first();
@@ -47,6 +48,6 @@ class AuthenticationController extends Controller
         $user->email = $userInput['email'];
         $user->password = Hash::make($userInput['password']);
         $user->save();
-        return view('user');
+        return view('user')->with('success', 'User registered successfully');
     }
 }
