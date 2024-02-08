@@ -10,7 +10,7 @@
     <!-- Bất kỳ CSS hoặc script nào khác bạn muốn bao gồm -->
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 </head>
 
 <body>
@@ -59,7 +59,26 @@
     </main>
 
     <footer>
-        <!-- Footer content -->
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="https://rikkeisoft.com/wp-content/themes/main/assets/images/home/logo.svg" />
+            </div>
+            <div class="line-footer"></div>
+            <div>
+                <div>
+                    <h3>RIKKEISOFT CORPORATION</h3>
+                    <p>Headquaters: 21st Floor, Handico Tower, Pham Hung St., Nam Tu Liem District Hanoi, Vietnam</p>
+                </div>
+                <div>
+                    <p>Marketing Manager: Phi Tuan Minh</p>
+                    <p>Tel: 02436231685</p>
+                    <p>Email: minhpt@rikkeisoft.com</p>
+                </div>
+            </div>
+            <div>
+                <p>Copyright © 2021 Rikkeisoft Corporation. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <!-- Bất kỳ script JavaScript nào bạn muốn bao gồm -->
