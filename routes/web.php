@@ -39,3 +39,6 @@ Route::get('/admin', function () {
 Route::get('/contact', function () {
     return view('contactUs');
 });
+Route::get('/blog', function () {
+    return view('blog');
+});

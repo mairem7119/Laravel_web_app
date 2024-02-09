@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/blog.css') }}">
+
 </head>
 
 <body>
@@ -24,7 +26,7 @@
             <nav class="header-navigation">
                 <a href="/">Home</a>
                 <a href="#">About</a>
-                <a href="#">Blog</a>
+                <a href="/blog">Blog</a>
                 <a href="/contact">Contact Us</a>
             </nav>
             <div class="user-information">

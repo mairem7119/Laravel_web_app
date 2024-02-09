@@ -7,8 +7,8 @@ body {
     height: 100%;
 }
 .introduction {
-    width: 40%;
-    padding: 100px 160px;
+    width: 70%;
+    padding: 90px 160px;
 }
 main {
     margin-top: 12px;
@@ -137,6 +137,8 @@ main {
 }
 .footer-logo {
     padding-top: 50px;
+    align-items: center;
+    display: inline-block;
 }
 .line-footer {
     border-bottom: 1px solid #fff;
