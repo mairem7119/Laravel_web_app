@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div>
-                <p>Copyright © 2021 Rikkeisoft Corporation. All rights reserved.</p>
+                <p class="footer-end-p">Copyright © 2021 Rikkeisoft Corporation. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -48,6 +48,7 @@ class AuthenticationController extends Controller
         $user->email = $userInput['email'];
         $user->password = Hash::make($userInput['password']);
         $user->save();
-        return view('user')->with('success', 'User registered successfully');
+        Auth::login($user);
+        return redirect()->route('user')->with('success', 'User registered successfully');
     }
 }
