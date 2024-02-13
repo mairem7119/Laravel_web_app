@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="search-bar">
-            <div>
+            {{-- <div>
                 <input type="text" class="input-search">
             </div>
             <div>
@@ -35,8 +35,8 @@
                       <a href="#">Option 3</a>
                     </div>
                   </div>
-            </div>
-            <button class="search-btn" type="submit">Search</button>
+            </div> --}}
+            <a class="search-btn" href="/createBlog"><i class="fas fa-plus" style="margin-right: 10px"></i>Create new blog</a>
         </div>
         <div class="title-blog">
             <h1>Content</h1>
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    <script>
+    {{-- <script>
         document.addEventListener("DOMContentLoaded", function(event) { 
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var buttons = document.getElementsByClassName("dropbtn");
@@ -104,5 +104,5 @@
             }
             });
 
-    </script>
+    </script> --}}
 @endsection

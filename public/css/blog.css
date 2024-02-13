@@ -31,7 +31,7 @@
 }
 .search-bar{
     display: flex;
-    justify-content: space-around;
+    justify-content: right;
     align-items: center;
     width: 80%;
     margin-top: 50px;
@@ -72,13 +72,13 @@
     background-color: #ffff;
   }
   .search-btn{
-    height: 35px;
-    width: 100px;
+    display: inline-block;
+    padding: 10px 20px; 
+    background-color: #BC2228; 
+    color: white; 
+    text-decoration: none;
     border-radius: 10px;
-    border: 1px solid;
-    background-color: #BC2228;
-    color: white;
-    font-weight: bold;
+    cursor: pointer;
   }
   .input-search{
     height: 31px;
@@ -86,11 +86,17 @@
     border-radius: 10px;
     border: 1px solid;
   }
+  .search-btn:hover {
+    background-color: #990000; 
+}
 
 .title-blog{
     text-align: center;
     margin-top: 30px;
     font-size: 25px;
+    border-bottom: 2px solid #ccc;
+    width: 60%;
+    margin: 0 auto;
 }
 
 .blog-list{

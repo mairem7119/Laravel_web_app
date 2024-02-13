@@ -103,12 +103,15 @@ main {
     text-align: center;
     font-size: 45px;
     color: #bc2228;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .company-location {
     display: flex;
     justify-content: center;
     align-items: stretch; /* Đảm bảo các cột trong hàng ngang có chiều cao bằng nhau */
     gap: 70px;
+    margin-bottom: 40px;
 }
 .company-branch {
     width: 200px;

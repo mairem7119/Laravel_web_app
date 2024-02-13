@@ -42,3 +42,7 @@ Route::get('/contact', function () {
 Route::get('/blog', function () {
     return view('blog');
 });
+
+Route::get('/createBlog', function () {
+    return view('createBlogs');
+});
