@@ -25,6 +25,7 @@ class BlogRequest extends FormRequest
             'title' => 'required',
             'blogType' => 'required',
             'content' => 'required',
+            'imageUrl' => 'required',
         ];
     }
     public function messages(): array
@@ -32,6 +33,7 @@ class BlogRequest extends FormRequest
         return [
             'title.required' => 'Please enter a title',
             'blogType.required' => 'Please select a blog type',
+            'imageUrl.required' => 'Please enter the image path',
             'content.required' => 'Please enter the content',
         ];
     }

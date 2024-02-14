@@ -22,6 +22,12 @@
                         <option value="vaction">Vaction</option>
                     </select>
                 </div>
+                <div class="create-blog-title">
+                    <input class="input-group" name="imageUrl" type="text" placeholder="Your image url">
+                    @error('imageUrl')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class='create-blog-content'> 
                     <textarea placeholder="Enter some text..." name="content"></textarea> 
                      @error('content') 

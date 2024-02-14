@@ -11,11 +11,12 @@ class BlogController extends Controller
 {
     public function CreateBlog(BlogRequest $request){
 
-        $userInput = $request->only('title', 'blogType', 'content');
+        $userInput = $request->only('title', 'blogType','imageUrl', 'content');
         try {
             $blog = new Blog();
             $blog->title = $userInput['title'];
             $blog->blog_type = $userInput['blogType'];
+            $blog->image_path = $userInput['imageUrl'];
             $blog->content = $userInput['content'];
             $blog->user_id = auth()->id();
             $blog->save();
@@ -26,5 +27,5 @@ class BlogController extends Controller
         return redirect()->route('blog')->with('success', 'Blog is created successfully');
     }
 
-    
+
 }

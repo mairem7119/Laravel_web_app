@@ -45,7 +45,7 @@ Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
 
-Route::get('/createBlog', function () {
+Route::middleware('ensure.authenticated')->get('/createBlog', function () {
     return view('createBlogs');
 });
 Route::post('/createBlog', [BlogController::class, 'createBlog'])->name('createBlog');

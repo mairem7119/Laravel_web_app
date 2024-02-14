@@ -36,7 +36,8 @@
                     </div>
                   </div>
             </div> --}}
-            <a class="search-btn" href="/createBlog"><i class="fas fa-plus" style="margin-right: 10px"></i>Create new blog</a>
+            <a class="search-btn" href="/createBlog" onclick="createBlog()">
+                <i class="fas fa-plus" style="margin-right: 10px"></i>Create new blog</a>
         </div>
         <div class="title-blog">
             <h1>Content</h1>
@@ -105,4 +106,13 @@
             });
 
     </script> --}}
+    <script>
+        function createBlog(){
+            @if (Auth::check())
+                window.location.href = "{{ route('createBlog') }}";
+            @else
+                alert("You need to login to create a Blog");
+            @endif
+        }
+    </script>
 @endsection
