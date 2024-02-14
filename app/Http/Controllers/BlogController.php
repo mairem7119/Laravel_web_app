@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BlogRequest;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 
 
 class BlogController extends Controller
 {
-    public function CreateBlog(Request $request){
+    public function CreateBlog(BlogRequest $request){
 
-        $userInput = $request->only('title', 'blog-type', 'content');
+        $userInput = $request->only('title', 'blogType', 'content');
         try {
             $blog = new Blog();
             $blog->title = $userInput['title'];
-            $blog->blog_type = $userInput['blog-type'];
+            $blog->blog_type = $userInput['blogType'];
             $blog->content = $userInput['content'];
             $blog->user_id = auth()->id();
             $blog->save();
@@ -24,4 +25,6 @@ class BlogController extends Controller
         
         return redirect()->route('blog')->with('success', 'Blog is created successfully');
     }
+
+    
 }

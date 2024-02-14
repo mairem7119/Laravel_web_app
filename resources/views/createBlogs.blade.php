@@ -15,18 +15,15 @@
                     @enderror
                 </div>
                 <div class="dropdown-type-blog">
-                    <select class="input-group" name="blog-type">
+                    <select class="input-group" name="blogType">
                         <option value="technology">Technology</option>
                         <option value="nature">Nature</option>
                         <option value="language">Language</option>
                         <option value="vaction">Vaction</option>
                     </select>
-                    @error('blog-type')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
                 </div>
                 <div class='create-blog-content'> 
-                    <textarea placeholder="Enter some text..."></textarea> 
+                    <textarea placeholder="Enter some text..." name="content"></textarea> 
                      @error('content') 
                         <div class="error">{{ $message }}</div>
                      @enderror 
