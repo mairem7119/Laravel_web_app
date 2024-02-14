@@ -4,24 +4,32 @@
 
 @section('content')
     <div class="container-blog">
-        <form action="/blog" method="POST">
+        <form action="{{route('createBlog')}}" method="POST">
+            @csrf
             <div class="cover-blog">
                 <h3>Create a new Blog</h3>
                 <div class="create-blog-title">
-                    <input class="input-group" type="text" placeholder="Your blog title">
+                    <input class="input-group" name="title" type="text" placeholder="Your blog title">
+                    @error('title')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="dropdown-type-blog">
-                    <select class="input-group" name="category">
-                        <option value="1">Technology</option>
-                        <option value="2">Nature</option>
-                        <option value="3">Language</option>
-                        <option value="4">Vaction</option>
+                    <select class="input-group" name="blog-type">
+                        <option value="technology">Technology</option>
+                        <option value="nature">Nature</option>
+                        <option value="language">Language</option>
+                        <option value="vaction">Vaction</option>
                     </select>
+                    @error('blog-type')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
                 </div>
-                <div class="create-blog-content">
-                    <textarea class="input-group" name="content" rows="4" cols="50" placeholder="Your blog content">
-                        Your blog content
-                    </textarea>
+                <div class='create-blog-content'> 
+                    <textarea placeholder="Enter some text..."></textarea> 
+                     @error('content') 
+                        <div class="error">{{ $message }}</div>
+                     @enderror 
                 </div>
                 {{-- <div class="upload-blog-image">
                     <label for="blog-image">Upload Image:</label>

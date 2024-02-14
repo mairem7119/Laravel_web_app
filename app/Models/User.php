@@ -35,7 +35,7 @@ class User extends Authenticatable
     ];
     public function isAdmin()
     {
-        return $this->role === 'admin'; // Giả sử role của admin được lưu trong trường 'role'
+        return $this->role === 'admin'; 
     }
     /**
      * The attributes that should be cast.
@@ -46,4 +46,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function blogs(){
+        return $this->hasMany(Blog::class);
+    }
 }

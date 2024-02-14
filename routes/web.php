@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\BlogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,8 +43,9 @@ Route::get('/contact', function () {
 });
 Route::get('/blog', function () {
     return view('blog');
-});
+})->name('blog');
 
 Route::get('/createBlog', function () {
     return view('createBlogs');
 });
+Route::post('/createBlog', [BlogController::class, 'createBlog'])->name('createBlog');

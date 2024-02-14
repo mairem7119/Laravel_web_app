@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
@@ -43,11 +42,16 @@ class AuthenticationController extends Controller
         if ($user) {
             return redirect()->route('register')->with('error', 'Email already exists');
         }
-        $user = new User();
-        $user->name = $userInput['name'];
-        $user->email = $userInput['email'];
-        $user->password = Hash::make($userInput['password']);
-        $user->save();
+        try {
+            $user = new User();
+            $user->name = $userInput['name'];
+            $user->email = $userInput['email'];
+            $user->password = Hash::make($userInput['password']);
+            $user->save();
+        } catch (\Exception $e) {
+            return redirect()->back()->withInput()->withErrors(['message' => 'An error occurred while creating the user']);
+        }
+        
         Auth::login($user);
         return redirect()->route('user')->with('success', 'User registered successfully');
     }
