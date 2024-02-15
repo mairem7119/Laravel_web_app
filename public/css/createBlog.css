@@ -58,3 +58,47 @@ textarea {
     padding: 10px;
     margin-top: 20px;
 }
+
+.upload-blog-image {
+    margin-top: 20px;
+}
+
+.upload-blog-image label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+/* .upload-blog-image input[type='file'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    cursor: pointer;
+} */
+
+.upload-blog-image input[type='file']:hover {
+    background-color: #eaeaea;
+}
+
+#preview-image {
+    max-width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.input-image{
+    visibility: hidden;
+}
+.upload-btn{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 115px;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+}

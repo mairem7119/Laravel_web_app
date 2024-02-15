@@ -11,7 +11,7 @@ class BlogController extends Controller
 {
     public function showBlog(){
         $blogs = Blog::get()->all();
-        
+
         return view('blog', compact('blogs'));
     }
 
@@ -25,6 +25,14 @@ class BlogController extends Controller
             $blog->image_path = $userInput['imageUrl'];
             $blog->content = $userInput['content'];
             $blog->user_id = auth()->id();
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = time().'.'.$image->extension(); // Tạo tên cho ảnh dựa trên thời gian
+                $image->move(public_path('images'), $imageName); // Lưu ảnh vào thư mục public/images
+        
+                $blog->image_path = 'images/'. $imageName;
+            }
+            dd($blog);
             $blog->save();
         } catch (\Exception $e) {
             return redirect()->back()->withInput()->withErrors(['message' => 'An error occurred while creating the blog']);

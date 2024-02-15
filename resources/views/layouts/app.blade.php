@@ -24,7 +24,7 @@
         <!-- Header content -->
         <div class="header-inner responsive-wrapper">
             <div class="header-logo">
-                <img src="https://rikkeisoft.com/wp-content/themes/main/assets/images/home/logo.svg" />
+                <img src="https://rikkeisoft.com/wp-content/themes/main/assets/images/home/logo.svg" title="logo-website"/>
             </div>
             <nav class="header-navigation">
                 <a href="/">Home</a>
