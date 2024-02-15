@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('css/blog.css') }}">
     <link rel="stylesheet" href="{{ asset('css/createBlog.css') }}">
-
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/webfavicon2.ico') }}">
 
 </head>
 
