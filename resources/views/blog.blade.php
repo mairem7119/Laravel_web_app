@@ -79,6 +79,18 @@
                         Eaque aut earum ipsam dignissimos modi rerum voluptatem ex?</p>
                 </div>
             </div>
+            @foreach ($blogs as $blog)
+            <div class="card">
+                <div class="blog-img">
+                    <img src="{{$blog->image_path}}" alt="">
+                </div>
+                <div class="blog-content">
+                    <span>{{$blog->blog_type}}</span>
+                    <h4>{{$blog->title}}</h4>
+                    <p>{{$blog->content}}</p>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
     {{-- <script>

@@ -9,7 +9,13 @@ use App\Models\Blog;
 
 class BlogController extends Controller
 {
-    public function CreateBlog(BlogRequest $request){
+    public function showBlog(){
+        $blogs = Blog::get()->all();
+        
+        return view('blog', compact('blogs'));
+    }
+
+    public function createBlog(BlogRequest $request){
 
         $userInput = $request->only('title', 'blogType','imageUrl', 'content');
         try {
@@ -27,5 +33,5 @@ class BlogController extends Controller
         return redirect()->route('blog')->with('success', 'Blog is created successfully');
     }
 
-
+    
 }

@@ -19,7 +19,7 @@
                         <option value="technology">Technology</option>
                         <option value="nature">Nature</option>
                         <option value="language">Language</option>
-                        <option value="vaction">Vaction</option>
+                        <option value="vacation">Vacation</option>
                     </select>
                 </div>
                 <div class="create-blog-title">

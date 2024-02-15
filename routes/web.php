@@ -41,9 +41,7 @@ Route::get('/admin', function () {
 Route::get('/contact', function () {
     return view('contactUs');
 });
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/blog', [BlogController::class, 'showBlog'])->name('blog');
 
 Route::middleware('ensure.authenticated')->get('/createBlog', function () {
     return view('createBlogs');

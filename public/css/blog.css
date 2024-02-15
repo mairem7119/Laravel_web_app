@@ -113,19 +113,37 @@ img{
     object-fit: cover;
 }
 .card{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    overflow: hidden;
-    box-shadow: 0 .1rem 1rem rgba(0,0,0,0.1);
-    border-radius: 1em;
-    background: #edeceb;
-    background: linear-gradient(to right, #fff, #eae8e7);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: #edeceb;
+  background: linear-gradient(to right, #fff, #eae8e7);
 }
 
 .blog-content{
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
+  padding: 1rem;
+  overflow: hidden;
+  line-height: 1.5; /* Đảm bảo độ cao dòng là 1.5 lần độ cao của phông chữ */
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+.blog-content p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Giới hạn số dòng hiển thị */
+  -webkit-box-orient: vertical;
+  line-height: 1.5; /* Đảm bảo độ cao dòng là 1.5 lần độ cao của phông chữ */
+  max-height: 6em; /* Giới hạn chiều cao của phần nội dung */
+  position: relative;
+}
+
+.blog-content p::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
 }

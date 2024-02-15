@@ -25,7 +25,7 @@ class BlogRequest extends FormRequest
             'title' => 'required',
             'blogType' => 'required',
             'content' => 'required',
-            'imageUrl' => 'required',
+            'imageUrl' => 'required|url|max:255',
         ];
     }
     public function messages(): array
@@ -35,6 +35,7 @@ class BlogRequest extends FormRequest
             'blogType.required' => 'Please select a blog type',
             'imageUrl.required' => 'Please enter the image path',
             'content.required' => 'Please enter the content',
+            'image_path.max' => 'URL must not exceed 255 characters',
         ];
     }
 }
