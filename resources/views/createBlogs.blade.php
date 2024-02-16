@@ -22,15 +22,12 @@
                         <option value="vacation">Vacation</option>
                     </select>
                 </div>
-                <div class="create-blog-title">
-                    <input class="input-group" name="imageUrl" type="text" placeholder="Your image url">
-                    @error('imageUrl')
+                <div class='upload-blog-image'>
+                    <label for="blog-image" class="upload-btn">Upload image</label>
+                    <input type='file' id='blog-image' name='image' accept='image/*' class="input-image"> 
+                    @error('image')
                         <div class="error">{{ $message }}</div>
                     @enderror
-                </div>
-                <div class='upload-blog-image'>
-                       <label for="blog-image" class="upload-btn">Upload image</label>
-                       <input type='file' id='blog-image' name='image' accept='image/*' class="input-image"> 
                     <img id="preview-image" src="#" alt="Preview" style="display: none; max-width: 100%; margin-top: 10px;">
                 </div>
                 <div class='create-blog-content'> 
@@ -39,10 +36,6 @@
                         <div class="error">{{ $message }}</div>
                      @enderror 
                 </div>
-                {{-- <div class="upload-blog-image">
-                    <label for="blog-image">Upload Image:</label>
-                    <input type="file" id="blog-image" name="image" accept="image/*">
-                </div> --}}
                 <div class="blog-btn">
                     <button type="submit">Submit your Blog</button>
                 </div>

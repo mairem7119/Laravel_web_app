@@ -25,7 +25,7 @@ class BlogRequest extends FormRequest
             'title' => 'required',
             'blogType' => 'required',
             'content' => 'required',
-            'imageUrl' => 'required|url|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }
     public function messages(): array
@@ -33,9 +33,11 @@ class BlogRequest extends FormRequest
         return [
             'title.required' => 'Please enter a title',
             'blogType.required' => 'Please select a blog type',
-            'imageUrl.required' => 'Please enter the image path',
             'content.required' => 'Please enter the content',
             'image_path.max' => 'URL must not exceed 255 characters',
+            'image.required' => 'Please select a image',
+            'image.mimes' => 'Please select a image with jpeg, png, jpg, gif type',
+            'image.mimes' => 'Please select a image size smaller than 2048KB',
         ];
     }
 }
