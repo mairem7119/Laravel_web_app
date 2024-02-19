@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BlogRequest;
 use Illuminate\Http\Request;
 use App\Models\Blog;
-
+use Exception;
+use PhpParser\Node\Stmt\TryCatch;
 
 class BlogController extends Controller
 {
-    public function showBlog(){
+    public function showAllBlog(){
         $blogs = Blog::get()->all();
 
         return view('blog', compact('blogs'));
@@ -38,5 +39,26 @@ class BlogController extends Controller
         return redirect()->route('blog')->with('success', 'Blog is created successfully');
     }
 
+    public function showBlog($id){
+
+        $blog = Blog::find($id);
+       
+        if($blog){
+            return view('viewBlog', compact('blog'));
+        }else{
+           return redirect()->back()->withInput()->withErrors(['message' => 'An error occurred while viewing the blog']);
+        }
+    }
+
+    public function updateBlog($id){
+        $blog = Blog::find($id);
+        if($blog){
+            $blog_type = $blog->blog_type;
+            return view('updateBlog', compact('blog', 'blog_type'));
+        }else{
+            return redirect()->back()->withInput()->withErrors(['message' => 'An error occurred while go to the update blog page']);
+        }
+        
+    }
     
 }

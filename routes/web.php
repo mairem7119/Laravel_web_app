@@ -41,9 +41,13 @@ Route::get('/admin', function () {
 Route::get('/contact', function () {
     return view('contactUs');
 });
-Route::get('/blog', [BlogController::class, 'showBlog'])->name('blog');
+Route::get('/blog', [BlogController::class, 'showAllBlog'])->name('blog');
 
 Route::middleware('ensure.authenticated')->get('/createBlog', function () {
     return view('createBlogs');
 });
 Route::post('/createBlog', [BlogController::class, 'createBlog'])->name('createBlog');
+
+//middleware(['ensure.authenticated', 'checkUserRole'])->
+Route::get('/blog/update/{id}', [BlogController::class, 'updateBlog'])->name('updateBlog');
+Route::get('/blog/view/{id}', [BlogController::class, 'showBlog'])->name('viewBlog');

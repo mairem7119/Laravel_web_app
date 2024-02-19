@@ -43,42 +43,6 @@
             <h1>Content</h1>
         </div>
         <div class="blog-list">
-            <div class="card">
-                <div class="blog-img">
-                    <img src="https://plus.unsplash.com/premium_photo-1661899594118-e4730c4c9109?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                </div>
-                <div class="blog-content">
-                    <span>Food</span>
-                    <h4>Delicious Food</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Porro natus, modi non recusandae, maxime illo, vitae laudantium expedita officia asperiores animi? 
-                        Eaque aut earum ipsam dignissimos modi rerum voluptatem ex?</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1583530180140-e7fea169690f?q=80&w=1773&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                </div>
-                <div class="blog-content">
-                    <span>Food</span>
-                    <h4>Delicious Food</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Porro natus, modi non recusandae, maxime illo, vitae laudantium expedita officia asperiores animi? 
-                        Eaque aut earum ipsam dignissimos modi rerum voluptatem ex?</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1525635569544-610f9540664a?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                </div>
-                <div class="blog-content">
-                    <span>Food</span>
-                    <h4>Delicious Food</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Porro natus, modi non recusandae, maxime illo, vitae laudantium expedita officia asperiores animi? 
-                        Eaque aut earum ipsam dignissimos modi rerum voluptatem ex?</p>
-                </div>
-            </div>
             @foreach ($blogs as $blog)
             <div class="card">
                 <div class="blog-img">
@@ -88,6 +52,14 @@
                     <span>{{$blog->blog_type}}</span>
                     <h4>{{$blog->title}}</h4>
                     <p>{{$blog->content}}</p>
+                </div>
+                <div class="action-btn">
+                    <button class="update-btn">
+                        <a href="{{ route('updateBlog', ['id' => $blog->id]) }}" >Update</a>
+                    </button>
+                    <button class="view-btn">
+                        <a href="{{ route('viewBlog', ['id' => $blog->id]) }}">View</a>
+                    </button>
                 </div>
             </div>
             @endforeach

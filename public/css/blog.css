@@ -113,6 +113,7 @@ img{
     object-fit: cover;
 }
 .card{
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -140,10 +141,105 @@ img{
   max-height: 6em; /* Giới hạn chiều cao của phần nội dung */
   position: relative;
 }
+.blog-content span{
+  text-transform: capitalize;
+  color: green;
+}
 
 .blog-content p::after {
   position: absolute;
   bottom: 0;
   right: 0;
   background: white;
+}
+.action-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+}
+.blog-img{
+  height: 45%;
+}
+.update-btn{
+  padding: 5px;
+  background: #007bff;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  margin-left: 10px;
+}
+.update-btn a{
+  text-decoration: none;
+  color: white;
+}
+.view-btn{
+  padding: 5px;
+  background: #28a745;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  margin-right: 10px;
+  
+}
+.view-btn a{
+  text-decoration: none;
+  color: white;
+
+}
+
+.action-btn button:hover.update-btn {
+  background-color: #0056b3; /* Màu xanh biển */
+}
+
+.action-btn button:hover.view-btn {
+  background-color: #218838; /* Màu xanh lá cây */
+}
+
+
+/* View Blog Css */
+.blog-container{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  margin: 0 auto;
+}
+.view-blog-content{
+  margin-top: 30px;
+}
+.view-blog-content span{
+  text-transform: capitalize;
+  color: green;
+}
+.top-line{
+  text-align: center;
+  width: 50%;
+}
+.top-line h3{
+  margin-bottom: 20px;
+  border-bottom: 1.5px solid #ccc;
+}
+.back-btn{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.back-btn a{
+  font-weight: bold;
+  color: #787878;
+  text-decoration: none;
+  border-bottom: 2px solid #ccc;
+}
+.back-btn a:hover{
+  color: #3b3b3b;
+}
+.back-btn i{
+  margin-right: 5px;
 }
